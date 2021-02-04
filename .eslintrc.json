@@ -36,7 +36,7 @@
     "plugin:react-hooks/recommended",
     "prettier",
     "prettier/@typescript-eslint",
-    "prettier/react" //Not Recommended https://prettier.io/docs/en/integrating-with-linters.html
+    "prettier/react"
   ],
   "rules": {
     // note you must disable the base rule as it can report incorrect errors
