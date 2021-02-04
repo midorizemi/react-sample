@@ -1,0 +1,25 @@
+{
+  "semi": true,
+  "printWidth": 120,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": true,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "jsxBracketSameLine": false,
+  "requirePragma": false,
+  "insertPragma": false,
+  "proseWrap": "preserve",
+  "htmlWhitespaceSensitivity": "css",
+  "vueIndentScriptAndStyle": false,
+  "embeddedLanguageFormatting": "auto",
+  "overrides": [
+      {
+        "files": "*.(ts|tsx)",
+        "options": {
+        "parser": "typescript"
+        }
+      }
+   ]
+}

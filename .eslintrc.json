@@ -1,0 +1,106 @@
+{
+  // 適用する環境
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "commonjs": true
+  },
+  "root": false,
+  // パーサー
+  "parser": "@typescript-eslint/parser",
+  // jsx を使います
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  // React のバージョンは自動検出に
+  "settings": {
+    "import/resolver": "webpack",
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": ["unused-imports", "react-hooks", "react", "@typescript-eslint"],
+  // 基本的にルールは recommended に従う
+  // NOTICE: prettier 関連は配列の最後尾に書く
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react" //Not Recommended https://prettier.io/docs/en/integrating-with-linters.html
+  ],
+  "rules": {
+    // note you must disable the base rule as it can report incorrect errors
+    // for import React
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    // should be rewritten as `["error", { allowAsStatement: true }]` in ESLint 7 or later
+    // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/1184
+    "no-void": ["error", { "allowAsStatement": true }],
+    "@typescript-eslint/no-unused-vars": [
+      "warn", // "error" は厳しすぎかもしれない．
+      {
+        "vars": "all",
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "ignoreRestSiblings": false,
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "tabWidth": 4,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "object-curly-newline": ["off"],
+    "no-unused-vars": "off",
+    "unused-imports/no-unused-imports-ts": "error",
+    "no-undef": "warn",
+    "quotes": ["warn", "single"],
+    "jsx-quotes": ["error", "prefer-single"],
+    "space-before-blocks": ["warn", { "functions": "always" }],
+    // TypeScirpt なので prop-types は要らない
+    "react/prop-types": "off"
+  },
+  // .js ファイルをオーバーライド （webpack.conig.jsなど）
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/explicit-function-return-type": "off"
+      }
+    }
+  ]
+}

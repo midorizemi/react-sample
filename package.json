@@ -1,0 +1,93 @@
+{
+  "private": true,
+  "name": "webpack-react-demo",
+  "scripts": {
+    "build": "webpack",
+    "build:prod": "webpack --mode=production",
+    "watch": "webpack -w",
+    "fix:format": "prettier --write \"./{lib,src,test}/**/*.{ts,tsx,json}\"",
+    "fix:lint": "eslint --fix \"./{lib,src,test}/**/*.{ts,tsx}\"",
+    "fix": "npm run fix:format && npm run fix:lint",
+    "test:jest": "jest",
+    "dev": "webpack-dev-server --mode development --config ./webpack.config.js --devtool=source-map"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.0.1",
+    "@types/draft-js": "^0.10.44",
+    "@types/jest": "^26.0.20",
+    "@types/react": "^17.0.0",
+    "@types/react-bootstrap": "^0.32.25",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-helmet": "^6.1.0",
+    "@types/react-redux": "^7.1.11",
+    "@types/react-window": "^1.8.2",
+    "@types/sass": "^1.16.0",
+    "@types/styled-components": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "autoprefixer": "^10.1.0",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-import-resolver-webpack": "^0.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unused-imports": "^1.0.1",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "postcss-loader": "^4.1.0",
+    "prettier": "^2.2.1",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "ts-jest": "^26.5.0",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
+    "webpack": "^4.0.0",
+    "webpack-bundle-analyzer": "^4.3.0",
+    "webpack-cli": "^3.0.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@draft-js-plugins/utils": "^4.0.0",
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@material-ui/pickers": "^3.2.10",
+    "@material-ui/system": "^4.11.2",
+    "@reduxjs/toolkit": "^1.5.0",
+    "@welldone-software/why-did-you-render": "^6.0.5",
+    "bootstrap": "^4.5.3",
+    "clsx": "^1.1.1",
+    "draft-js": "^0.11.7",
+    "fibers": "^5.0.0",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^6.14.2",
+    "react-redux": "^7.2.2",
+    "react-window": "^1.8.6",
+    "sass": "^1.30.0",
+    "styled-components": "^5.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts, tsx}": [
+      "npm run fix"
+    ],
+    "*.json": [
+      "prettier --write './**/*.json'"
+    ]
+  },
+  "jest": {
+    "verbose": true
+  }
+}

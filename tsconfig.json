@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    // TSはECMAScript 5に変換
+    "target": "es5",
+    // TSのモジュールはES Modulesとして出力
+    "module": "es2015",
+    // JSXの書式を有効に設定
+    "jsx": "react",
+    "moduleResolution": "node",
+    "lib": ["es2020", "es6", "dom"],
+    //厳密な型チェックオプションを有効に.
+    "strict": true,
+    // "noImplicitAny": true, //暗黙のany型をエラーに
+    // "strictNullChecks": true, // nullやundefinedで初期化が必要な場合は、型を明示させる
+    // "noImplicitThis": true, //thisに型を指定していない場合にエラーを発生させる
+    // "alwaysStrict": true, //
+    "noImplicitReturns": true, // 関数の返り値型をチェックする
+    "skipLibCheck": true, // importするライブラリの全型チェックをスキップする
+    "forceConsistentCasingInFileNames": true, //import時にファイルパスの文字列で大文字小文字を区別するかどうかを指定する
+    // CommonJSモジュールとESモジュール間の相互運用性を,すべてのインポート用に名前空間オブジェクトを作成することで可. allowSyntheticDefaultImportsをTrueにする
+    "esModuleInterop": true,
+    //"allowSyntheticDefaultImports": true, // デフォルトのエクスポートがないモジュールからのデフォルトのインポートを許可する．これはコードの出力には影響せず，型検査だけ行う。
+    "resolveJsonModule": true, //自分で型定義を行う必要なく json ファイルを扱うことを可能に
+    "baseUrl": "./",
+    "paths": {
+      "*": ["@types/*"]
+    }
+  }
+}
