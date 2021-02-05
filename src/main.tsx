@@ -34,7 +34,10 @@ class App extends React.Component<IProps, IStates> {
             crossOrigin='anonymous'
           />
         </Helmet>
-        <h1>{this.state.comment}</h1>
+        <main>
+          <h1>{this.state.comment}</h1>
+          foobar
+        </main>
       </>
     );
   }
